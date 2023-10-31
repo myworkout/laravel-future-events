@@ -2,7 +2,7 @@
 
 namespace Myworkout\LaravelFutureEvents;
 
-use Myworkout\LaravelFutureEvents\Commands\LaravelFutureEventsCommand;
+use Myworkout\LaravelFutureEvents\Commands\RunLaravelFutureEventsCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -18,8 +18,7 @@ class LaravelFutureEventsServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-future-events')
             ->hasConfigFile()
-            ->hasViews()
             ->hasMigration('create_laravel-future-events_table')
-            ->hasCommand(LaravelFutureEventsCommand::class);
+            ->hasCommand(RunLaravelFutureEventsCommand::class);
     }
 }
