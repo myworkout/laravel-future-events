@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Myworkout\LaravelFutureEvents\Models;
@@ -18,6 +19,7 @@ use Illuminate\Database\Eloquent\Prunable;
  * @property \Illuminate\Support\Carbon $end
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static Builder|TimeWindow newModelQuery()
  * @method static Builder|TimeWindow newQuery()
  * @method static Builder|TimeWindow query()
@@ -28,6 +30,7 @@ use Illuminate\Database\Eloquent\Prunable;
  * @method static Builder|TimeWindow whereStart($value)
  * @method static Builder|TimeWindow whereUpdatedAt($value)
  * @method static \Database\Factories\Db\TimeWindowFactory factory(...$parameters)
+ *
  * @mixin \Eloquent
  */
 class TimeWindow extends Model

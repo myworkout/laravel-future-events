@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Myworkout\LaravelFutureEvents\Services;
@@ -12,6 +13,7 @@ class TimeWindowService
     public function advance(string $identifier, CarbonImmutable $end, callable $callback): mixed
     {
         $lock = Cache::lock("time-window-advance_{$identifier}", 60);
+
         return $lock->block(0, function () use ($identifier, $end, $callback) {
             $lastTimeWindow = TimeWindow::query()
                 ->whereIdentifier($identifier)
@@ -24,6 +26,7 @@ class TimeWindowService
             }
 
             $this->persistNewTimeWindow($identifier, CarbonImmutable::now(), $end);
+
             return $callback($previousStart, $end);
         });
     }

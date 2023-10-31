@@ -1,11 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Myworkout\LaravelFutureEvents\Tests\Models;
 
 use Carbon\CarbonImmutable;
 
-class ExampleModel implements HasAutomaticStateTransitions {
+class ExampleModel implements HasAutomaticStateTransitions
+{
     /**
      * @return Collection<int, FutureEvent>
      */
@@ -14,10 +16,10 @@ class ExampleModel implements HasAutomaticStateTransitions {
         CarbonImmutable $end
     ): Collection {
         return \Myworkout\LaravelFutureEvents\Tests\ExampleModel::query()
-            ->where(fn(Builder $query) => $query->where('start_at', '>=', $start)
+            ->where(fn (Builder $query) => $query->where('start_at', '>=', $start)
                 ->where('start_at', '<', $end)
                 ->where('state', ExampleModelState::scheduled))
-            ->orWhere(fn(Builder $query) => $query->where('end_at', '>=', $start)
+            ->orWhere(fn (Builder $query) => $query->where('end_at', '>=', $start)
                 ->where('end_at', '<', $end)
                 ->where('state', ExampleModelState::started))
             ->get()
@@ -30,7 +32,7 @@ class ExampleModel implements HasAutomaticStateTransitions {
                     $contestRound,
                     $contestRound->end_at->toImmutable(),
                 ),
-                default => throw new \Exception('Invalid state: ' . $contestRound->state->value)
+                default => throw new \Exception('Invalid state: '.$contestRound->state->value)
             });
     }
 

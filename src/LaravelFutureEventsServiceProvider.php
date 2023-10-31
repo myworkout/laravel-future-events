@@ -2,9 +2,9 @@
 
 namespace Myworkout\LaravelFutureEvents;
 
+use Myworkout\LaravelFutureEvents\Commands\LaravelFutureEventsCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Myworkout\LaravelFutureEvents\Commands\LaravelFutureEventsCommand;
 
 class LaravelFutureEventsServiceProvider extends PackageServiceProvider
 {
