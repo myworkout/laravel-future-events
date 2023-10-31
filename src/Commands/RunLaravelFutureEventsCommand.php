@@ -3,6 +3,7 @@
 namespace Myworkout\LaravelFutureEvents\Commands;
 
 use Illuminate\Console\Command;
+use Myworkout\LaravelFutureEvents\Services\TimeWindowService;
 
 class RunLaravelFutureEventsCommand extends Command
 {
