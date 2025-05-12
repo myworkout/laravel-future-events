@@ -2,6 +2,4 @@
 
 namespace Myworkout\LaravelFutureEvents;
 
-class LaravelFutureEvents
-{
-}
+class LaravelFutureEvents {}
